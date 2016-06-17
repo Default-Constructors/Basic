@@ -1,0 +1,78 @@
+﻿@model IEnumerable<ZaKhan.Model.BookingModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Bookings</h2>
+    </div>
+<div class="panel-body">
+
+    <p>
+        @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BranchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OptometristName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookedTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalCost)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BranchName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OptometristName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookedDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookedTime)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalCost)
+                </td>
+                <td>
+                    <button name="button" value="ActionOne" class="button" style="width: 70px;" onclick="location.href = '@Url.Action("Calendar", "Booking")'">
+
+                        <img src="~/Content/Images/icon-calendar.png" />  Calendar
+                    </button>
+                  
+                    @Html.ActionLink("Delete", "Delete", new {id = item.BookingID}, new {@class = "btn btn-danger"})
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Html.ActionLink("Cancel and return to List", "Admin", "Login", null, new
+                    {
+                        @class = "btn btn-success"
+                    })
+</div>
+</div>

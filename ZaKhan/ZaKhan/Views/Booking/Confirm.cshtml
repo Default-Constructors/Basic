@@ -1,0 +1,90 @@
+﻿@model ZaKhan.Data.Booking
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Confirm Booking</h2>
+    </div>
+    <div class="panel-body">
+
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+
+            <div class="panel-body">
+                <div class="form-horizontal">
+
+                    <hr/>
+                    @Html.ValidationSummary(true)
+                    @Html.HiddenFor(model => model.BookingID)
+
+                    <div class="form-group">
+
+                        @Html.Label("Username", htmlAttributes: new {@class = "control-label col-md-2"})
+
+                        <div class="col-md-10">
+                           
+                            @Html.TextBoxFor(model => model.Username, new { style = "width:200px;", @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.Username)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BranchName, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.BranchName, new { style = "width:200px;", @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.BranchName)
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BookedDate, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.BookedDate, new { style = "width:200px;", @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.BookedDate)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.BookedTime, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.BookedTime, new { style = "width:200px;", @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.BookedTime)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.TotalCost, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.TotalCost, new { style = "width:200px;", @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.TotalCost)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.OptometristName, htmlAttributes: new {@class = "control-label col-md-2"})
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.OptometristName, new { style = "width:200px;", @class = "form-control", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.OptometristName)
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @Html.ActionLink("Update", "Create", null, new {@class = "btn btn-primary"})
+                        <input type="submit" value="Confirm" class="btn btn-success"/>
+                        @Html.ActionLink("Cancel", "Cancel", null, new {@class = "btn btn-warning"})
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>

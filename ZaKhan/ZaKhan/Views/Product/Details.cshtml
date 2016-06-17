@@ -1,0 +1,78 @@
+﻿@model ZaKhan.Model.Products.ProductView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Details</h2>
+    </div>
+<div class="panel-body">
+    <div>
+       
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.price)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.SerialCode)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SerialCode)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdBrandView.BrandName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProdBrandView.BrandName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ProdCategoryView.CategoryName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProdCategoryView.CategoryName)
+            </dd>
+
+           
+
+
+        </dl>
+    </div>
+    <p>
+        @*@Html.ActionLink("Edit", "Update", new {id = Model.Id}, new { @class = "btn btn-primary" }) |*@
+        @Html.ActionLink("Cancel and return to List", "CustomerIndex","product", null, new
+                    {
+                        @class = "btn btn-warning"
+                    })
+    </p>
+</div>
+</div>

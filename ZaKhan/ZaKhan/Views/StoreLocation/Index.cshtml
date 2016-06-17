@@ -1,0 +1,74 @@
+﻿@model IEnumerable<ZaKhan.Model.StoreLocationView>
+
+@{
+    ViewBag.Title = "Store Locator";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Store Details</h2>
+    </div>
+<div class="panel-body">
+
+    @if (User.IsInRole("Admin").Equals(true))
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
+        </p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpHours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Contact)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OpHours)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Contact)
+                </td>
+                <td>
+                    @if (User.IsInRole("Admin").Equals(true))
+                    {
+                        @Html.ActionLink("Edit", "Edit", new {id = item.LocationId}, new {@class = "btn btn-primary"})
+
+                        @Html.ActionLink("Delete", "Delete", new {id = item.LocationId}, new {@class = "btn btn-danger"})
+                    }
+                    @Html.ActionLink("Navigate", "View", new {id = item.LocationId}, new {@class = "btn btn-success"})
+                </td>
+            </tr>
+        }
+
+    </table>
+@if (User.IsInRole("Admin").Equals(true))
+{
+    @Html.ActionLink("Cancel and return to List", "Admin", "Login", null, new
+    {
+        @class = "btn btn-success"
+    })
+}
+
+</div>
+</div>

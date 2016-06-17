@@ -1,0 +1,66 @@
+﻿@model ZaKhan.Model.Orderz.OrderView
+
+
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h4>Details</h4>
+    </div>
+<div class="panel-body">
+
+
+    <div>
+
+        <hr/>
+        @Html.HiddenFor(model => model.OrderId)
+        <dl class="dl-horizontal">
+           
+
+            
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.FirstName)*@
+                First Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @* @Html.DisplayNameFor(model => model.LastName)*@
+                Last Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.TotalCost)*@
+                Total Cost
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TotalCost)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Cancel and return to List", "MyOrders", "Order", null, new
+                    {
+                        @class = "btn btn-warning"
+                    })
+    </p>
+</div>
+</div>

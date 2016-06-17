@@ -1,0 +1,59 @@
+﻿@model ZaKhan.Model.OptometristModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Details</h2>
+    </div>
+<div class="panel-body">
+    <div>
+
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.LocationId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LocationId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.OptometristName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OptometristName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cell)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cell)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("Cancel and return to List", "Index", "Optometrist", null, new
+        {
+            @class = "btn btn-warning"
+        })
+    </p>
+</div>
+</div>

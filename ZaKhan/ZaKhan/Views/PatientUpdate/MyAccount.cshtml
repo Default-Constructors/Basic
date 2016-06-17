@@ -1,0 +1,137 @@
+﻿@model ZaKhan.Data.Patient
+
+@{
+    ViewBag.Title = "MyAccount";
+}
+
+<h2 >Welcome</h2><h3> @Html.DisplayFor(model => model.UserName) </h3>
+<h5 align ="center">A list of your personal infomation, Here you can add on information to your personal profile</h5>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        
+
+        <dt>
+            @* @Html.DisplayNameFor(model => model.IdentificationNumber)*@
+            Identification Number
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentificationNumber)
+        </dd>
+        <br/>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.FirstName)*@
+            First Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <br />
+        <dt>
+            @*@Html.DisplayNameFor(model => model.LastName)*@
+            Last Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Telephone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Telephone)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Cellphone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cellphone)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Occupation)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.SecurityQuestion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityQuestion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityAnswer)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "MyDetails", new { id = Model.PatientId }, new { @class = "btn btn-primary" })
+
+    
+    
+</p>

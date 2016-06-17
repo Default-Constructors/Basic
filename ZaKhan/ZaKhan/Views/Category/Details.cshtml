@@ -1,0 +1,36 @@
+﻿@model ZaKhan.Model.ProdCategoryView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Details</h2>
+    </div>
+<div class="panel-body">
+
+    <div>
+
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.CategoryName)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Update", new { id = Model.CategoryId }, new { @class = "btn btn-primary" }) |
+        @Html.ActionLink("Cancel and return to List", "Index", "Category", null, new
+                {
+                    @class = "btn btn-warning"
+                })
+    </p>
+</div>
+</div>

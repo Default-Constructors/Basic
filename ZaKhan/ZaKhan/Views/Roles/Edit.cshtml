@@ -1,0 +1,57 @@
+﻿@model ZaKhan.Model.EditRoleViewModel
+@{
+    ViewBag.Title = "Edit";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Update</h2>
+    </div>
+    <div class="panel-body">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                <hr/>
+                @Html.ValidationSummary(true)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RoleName,
+                        new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.RoleName)
+                        @Html.ValidationMessageFor(model => model.RoleName)
+                    </div>
+                </div>
+
+                @*<div class="form-group">
+                    @Html.LabelFor(model => model.Description,
+                        new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>*@
+                @Html.HiddenFor(model => model.Description)
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-success"/>
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Cancel and return to List", "Index", "Roles", null, new
+                    {
+                        @class = "btn btn-warning"
+                    })
+        </div>
+    </div>
+</div>

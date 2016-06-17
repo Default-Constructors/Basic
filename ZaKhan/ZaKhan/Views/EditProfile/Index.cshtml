@@ -1,0 +1,100 @@
+﻿@model ZaKhan.Model.SignUpViewModel
+
+@{
+    ViewBag.Title = "Index";
+    
+}
+<style type="text/css">
+    body {
+        background-position: center;
+     
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+<br />
+<br />
+
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h4>View Your Details</h4>
+    </div>
+    
+
+        <hr/>
+
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+                @*<dt>
+                    @Html.DisplayNameFor(model => model.FullName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FullName)
+                </dd>*@
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.EmailAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.EmailAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+
+                <dt>
+                    @Html.HiddenFor(model => model.Password)
+                </dt>
+
+                <dd>
+                    @Html.HiddenFor(model => model.Password)
+                </dd>
+
+                <dt>
+                    @Html.HiddenFor(model => model.ConfirmPassword)
+                </dt>
+
+                <dd>
+                    @Html.HiddenFor(model => model.ConfirmPassword)
+                </dd>
+
+                <dt>
+                    @Html.HiddenFor(model => model.Cell)
+                </dt>
+
+                <dd>
+                    @Html.HiddenFor(model => model.Cell)
+                </dd>
+
+            </dl>
+            
+        </div>
+    <p align="right">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UserName }, new { @class = "btn btn-warning" }) &nbsp;
+
+    </p>
+</div>

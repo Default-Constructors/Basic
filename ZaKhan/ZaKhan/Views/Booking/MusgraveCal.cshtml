@@ -1,0 +1,530 @@
+﻿@model ZaKhan.Model.BookingModel
+
+@{
+    ViewBag.Title = "MusgraveCal";
+}
+
+@using ZaKhan.Data;
+
+
+<h1 colspan="7" align="center" style="color:darkblue">@Convert.ToDateTime(DateTime.Now).ToString("MMMM yyyy")</h1>
+
+<table border="1">
+
+
+
+
+    <tr>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Sunday</h2>
+        </td>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Monday</h2>
+        </td>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Tuesday</h2>
+        </td>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Wednesday</h2>
+        </td>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Thursday</h2>
+        </td>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Friday</h2>
+        </td>
+        <td align="center" width="200px" height="100px" style="background-color:cornflowerblue">
+            <h2 style="font-weight: bold; color:lightgray">Saturday</h2>
+        </td>
+    </tr>
+
+
+    <tr>
+
+
+        <td align="center" width="150px" height="150px" style="background-color: lavender;font-weight:bold">
+            1<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "01")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+        </td>
+
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            2<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "02")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            3<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "03")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            4<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "04")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            5<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "05")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="100px" height="100px" style="font-weight:bold">
+            6<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "06")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="background-color: lavender;font-weight:bold">
+            7<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "07")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            8<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "08")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            9<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "09")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            10<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "10")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            11<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "11")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            12<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "12")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            13<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "13")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            14<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "14")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            15<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "15")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            16<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "16")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            17<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "17")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            18<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "18")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            19<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "19")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            20<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "20")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            21<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "21")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            22<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "22")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            23<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "23")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            24<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "24")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            25<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "25")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            26<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "26")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            27<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "27")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            28<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "28")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+    </tr>
+
+    <tr>
+        <td align="center" width="150px" height="150px" style="background-color:lavender;font-weight:bold">
+            29<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "29")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+        <td align="center" width="150px" height="150px" style="font-weight:bold">
+            30<br />
+            @foreach (Booking b in ViewBag.Musgrave)
+            {
+
+                if (@Convert.ToDateTime(b.BookedDate).ToString("dd") == "30")
+                {
+
+                    @b.Username<br />
+                    @b.OptometristName<br />
+                    @b.BookedTime
+                }
+            }
+
+        </td>
+
+        <td style="border-bottom-style:hidden; border-right-style:hidden" align="center">
+
+            <button name="button" value="ActionOne" class="button" style="width: 100px;" onclick="location.href = '@Url.Action("GatewayCal", "Booking")'">
+                <img src="~/Content/Images/Calender Booking.png" /> GATEWAY
+            </button>
+
+        </td>
+
+
+        <td style="border-bottom-style:hidden; border-right-style:hidden" align="center">
+            <button name="button" value="ActionOne" class="button" style="width: 100px;" onclick="location.href = '@Url.Action("PavilionCal", "Booking")'">
+                <img src="~/Content/Images/Calender Booking.png" /> PAVILION
+            </button>
+        </td>
+        <td style="border-bottom-style:hidden; border-right-style:hidden" align="center">
+            <button name="button" value="ActionOne" class="button" style="width: 100px;" onclick="location.href = '@Url.Action("Calendar", "Booking")'">
+                <img src="~/Content/Images/Calender Booking.png" /> ALL
+            </button>
+        </td>
+    </tr>
+
+</table>
+
+

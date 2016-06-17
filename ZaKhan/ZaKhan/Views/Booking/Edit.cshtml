@@ -1,0 +1,116 @@
+﻿@model ZaKhan.Model.BookingModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Update</h2>
+    </div>
+<div class="panel-body">
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+           
+            <hr/>
+            @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+            @Html.HiddenFor(model => model.BookingID)
+            @Html.HiddenFor(model => model.TotalCost)
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Username, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Username, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.Username, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BranchName, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.BranchName, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownList("BranchName", (SelectList) ViewData["optometristBranch"], "Select a branch", new {Style = "width:300px; height:30px", htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.BranchName, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.OptometristName, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.OptometristName, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownList("OptometristName", (SelectList) ViewData["optometrists"], "Select an Optometrist", new {Style = "width:300px; height:30px", htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.OptometristName, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BookedDate, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.BookedDate, new {Style = "width:290px;", htmlAttributes = new {@class = "form -control"}})
+                    @Html.ValidationMessageFor(model => model.BookedDate, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.BookedTime, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.BookedTime, new { htmlAttributes = new { @class = "form-control" } })*@
+                    @Html.DropDownList("BookedTime", new List<SelectListItem> {new SelectListItem {Text = "09:00am", Value = "09:00am"}, new SelectListItem {Text = "09:30am", Value = "09:30am"}, new SelectListItem {Text = "10:00am", Value = "10:00am"}, new SelectListItem {Text = "10:30am", Value = "10:30am"}, new SelectListItem {Text = "11:00am", Value = "11:00am"}, new SelectListItem {Text = "11:30am", Value = "11:30am"}, new SelectListItem {Text = "12:00pm", Value = "12:00pm"}, new SelectListItem {Text = "12:30pm", Value = "12:30pm"}, new SelectListItem {Text = "1:00pm", Value = "1:00pm"}, new SelectListItem {Text = "1:30pm", Value = "1:30pm"}, new SelectListItem {Text = "2:00pm", Value = "2:00pm"}, new SelectListItem {Text = "2:30pm", Value = "2:30pm"}, new SelectListItem {Text = "3:00pm", Value = "3:00pm"}, new SelectListItem {Text = "3:30pm", Value = "3:30pm"}, new SelectListItem {Text = "4:00pm", Value = "4:00pm"}, new SelectListItem {Text = "4:30pm", Value = "4:30pm"}, new SelectListItem {Text = "5:00pm", Value = "5:00pm"}}, null, new {Style = "width:300px; height:30px", htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.BookedTime, "", new {@class = "text-danger"})
+                </div>
+            </div>
+
+            @*<div class="form-group">
+                @Html.LabelFor(model => model.TotalCost, htmlAttributes: new {@class = "control-label col-md-2"})
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TotalCost, new {htmlAttributes = new {@class = "form-control"}})
+                    @Html.ValidationMessageFor(model => model.TotalCost, "", new {@class = "text-danger"})
+                </div>
+            </div>*@
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-success"/>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div>
+        @Html.ActionLink("Cancel and return to List", "Bookings", "Booking", null, new
+                    {
+                        @class = "btn btn-warning"
+                    })
+    </div>
+    <link href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" rel="Stylesheet"
+          type="text/css"/>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <!-- Code for DatePicker -->
+
+    <script language="javascript">
+
+        $(document)
+            .ready(function() {
+                $("#BookedDate")
+                    .datepicker({
+                        minDate: 0, //current date
+                        maxDate: '+1M', //range for only 1 month
+                        showOn: "button",
+                        buttonImage: "/Content/Images/icon-calendar.png",
+
+                        buttonImageOnly: true,
+                        buttonText: "Select date"
+                    });
+            });
+
+    </script>
+    @Scripts.Render("~/bundles/jqueryval")
+</div>
+</div>

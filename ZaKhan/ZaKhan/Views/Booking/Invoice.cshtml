@@ -1,0 +1,101 @@
+﻿
+@{
+    ViewBag.Title = "Invoice";
+}
+
+@using ZaKhan.Data;
+
+<table border="0" >
+    <tr>
+        <td><h2 style="font-weight:bold; font-family:'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Invoice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+        </td>
+        <td>
+            <img src="~/Content/Images/za khan.jpg" />
+            <br />
+            <br />
+            <br />
+        </td>
+
+    </tr>
+   
+    <tr>
+        <td>
+        @foreach (Booking bo in ViewBag.listbooks)
+        {
+            <h5> Invoice No: @bo.BookingID</h5>
+        }
+        @DateTime.Now.Date
+            <br />
+            <br />
+            <br />
+        </td>
+        <td>
+           
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table border="1">
+                <tr>
+                    <td style="font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Description&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td >
+                    <td style="font-weight:bold">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Amount Due&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                </tr>
+                <tr>
+                    @foreach (Booking bo in ViewBag.listbooks)
+                    {
+                        <td align="center"><br/>Eye test consultation<br/><br/></td>
+                        <td align="center"><br/>@bo.TotalCost<br/><br/></td>
+                    }
+                </tr>
+            </table>
+            <br />
+            <br />
+            <br />
+        </td>
+        
+    </tr>
+       <tr>
+           <td>
+               @foreach (Patient p in ViewBag.listdetails)
+               {
+                   <h5>For: @p.FirstName &nbsp;  @p.LastName</h5>
+               }
+
+               @foreach (Booking b in ViewBag.listbooks)
+               {
+                   <h5>with: @b.OptometristName</h5>
+                   <h5>by: @b.BranchName</h5>
+                   <h5>at: @b.BookedDate&nbsp;@b.BookedTime</h5>
+
+               }
+               <br />
+               <br />
+               <br />
+           </td>
+           <td>
+              
+           </td>
+       </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <img src="~/Content/Images/slogan.png"/>
+        </td>
+       
+    </tr>
+    <tr>
+        <td colspan="2" align="center">
+            <h5>Thank you for booking a consultation with us.</h5>
+        </td>
+  
+    </tr>
+    <tr>
+        <td>
+            <a clase ="btn btn-default" href="javascript:window.print()">Print Invoice &raquo;</a>
+        </td>
+    </tr>
+</table>
+
+
+
+
+

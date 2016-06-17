@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ZaKhan.Model.RoleViewModel>
+
+
+@{
+    ViewBag.Title = "Index";
+  
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>All Roles</h2>
+    </div>
+    <div class="panel-body">
+        @Html.ActionLink("New Role", "Create", null, new { @class = "btn btn-primary btn-sm" })
+        <table class="table table-striped table-condensed table-bordered">
+            <tr>
+                <th class="text-left">Name</th>
+                @*<th class="text-left">Description</th>*@
+                <th class="text-right">Actions</th>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>@item.RoleName</td>
+                    @*<td>@item.Description</td>*@
+                    <td>
+                        <div align="right">
+                            @Html.ActionLink("Edit", "Edit", new {id = item.RoleName}, new {@class = "btn btn-warning"})
+                            @Html.ActionLink("Delete", "Delete", new {id = item.RoleName}, new {@class = "btn btn-danger"})
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+        @Html.ActionLink("Cancel and return to List", "Admin", "Login", null, new
+                    {
+                        @class = "btn btn-success"
+                    })
+    </div>
+</div>

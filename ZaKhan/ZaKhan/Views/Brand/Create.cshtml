@@ -1,0 +1,51 @@
+﻿@model ZaKhan.Model.ProdBrandView
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Create Brand</h2>
+    </div>
+<div class="panel-body">
+    <div class="well">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr/>
+                @Html.ValidationSummary(true)
+
+                @if (ViewBag.Message != "")
+                {
+                    <p style="color: red">@ViewBag.Message</p>
+                }
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BrandName,
+                        new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(model => model.BrandName, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.BrandName)
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-success"/>|
+                        @Html.ActionLink("Cancel and return to List", "Index", "Brand", null, new
+                        {
+                            @class = "btn btn-warning"
+                        })
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</div>
+    </div>

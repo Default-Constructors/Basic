@@ -1,0 +1,84 @@
+﻿@model ZaKhan.Model.ShoppingCart.ShoopingCartView
+
+@{
+    ViewBag.Title = "CartDetails";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="panel panel-default">
+    <div class="panel-heading" align="center">
+        <h2>Details</h2>
+    </div>
+<div class="panel-body">
+    <div>
+
+        <hr/>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Username)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Username)
+            </dd>
+
+            @*<dt>
+                @Html.DisplayNameFor(model => model.ProductID)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProductID)
+            </dd>*@
+
+            <dt>
+                @* @Html.DisplayNameFor(model => model.ProuductName)*@
+                Product Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ProuductName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+
+            <dt>
+                @*  @Html.DisplayNameFor(model => model.Qty)*@
+                Quantity
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Qty)
+            </dd>
+
+            <dt>
+                @*@Html.DisplayNameFor(model => model.SubCost)*@
+                Cost
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.SubCost)
+            </dd>
+
+            @*<dt>
+                @Html.DisplayNameFor(model => model.isBought)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.isBought)
+            </dd>*@
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Cancel and return back to Cart", "MyCart", "ShoppingCart", null, new
+                    {
+                        @class = "btn btn-warning"
+                    })
+    </p>
+</div>
+</div>
