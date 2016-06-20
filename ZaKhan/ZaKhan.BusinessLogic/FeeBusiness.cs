@@ -42,7 +42,7 @@ namespace ZaKhan.BusinessLogic
             {
                 FeeView feeView = new FeeView();
                 var op = new Fee();
-                op = repo.GetById(1);
+                op = repo.GetById(4);
                 if (true)
                 {
                     t = (op.Price) + ((op.Price) * (op.Vat / 100));

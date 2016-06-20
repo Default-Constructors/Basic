@@ -86,14 +86,12 @@ namespace ZaKhan.Controllers
         }
 
 
-        public ActionResult Admin
-           ()
+        public ActionResult Admin()
         {
             if (User.IsInRole("Admin").Equals(true))
-
-                return View();
+            return View();
             else
-                return RedirectToAction("Login", "Login");
+            return RedirectToAction("Login", "Login");
         }
     }
 }
