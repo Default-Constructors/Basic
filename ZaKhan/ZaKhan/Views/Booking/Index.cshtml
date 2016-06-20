@@ -14,7 +14,7 @@
     <p>
         @Html.ActionLink("Create New", "Create", "", new { @class = "btn btn-primary" })
     </p>
-    <table class="table">
+    <table class="table table-striped table-bordered table-condensed">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Username)
@@ -56,15 +56,15 @@
                     @Html.DisplayFor(modelItem => item.BookedTime)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.TotalCost)
+                   R @Html.DisplayFor(modelItem => item.TotalCost)
                 </td>
                 <td>
                     <button name="button" value="ActionOne" class="button" style="width: 70px;" onclick="location.href = '@Url.Action("Calendar", "Booking")'">
 
                         <img src="~/Content/Images/icon-calendar.png" />  Calendar
                     </button>
-                  
-                    @Html.ActionLink("Delete", "Delete", new {id = item.BookingID}, new {@class = "btn btn-danger"})
+
+                    @Html.ActionLink("Delete", "Delete", new { id = item.BookingID }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
         }

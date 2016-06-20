@@ -14,7 +14,12 @@
                     @Html.DropDownList("SearchString", (SelectList)ViewData["UName"], "Select an Username", new { Style = "width:250px" })
                     <input type="submit" value="Search" />
                 </h4>
+
+                Online users:
+                <div id="usersCount"></div>
             </p>
+            
+            
                
         }
 
@@ -66,4 +71,27 @@
                     })
     </div>
     </div>
+
+    <!-- JavaScript -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.js"></script>
+    <script src="~/Scripts/jquery.signalR-2.2.0.min.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+
+    <script>
+        $(function () {
+            // Reference the auto-generated proxy for the hub.
+            var userActivity = $.connection.userActivityHub;
+
+            // Create a function that the hub can call back to display messages.
+            userActivity.client.updateUsersOnlineCount = function (count) {
+                // Add the message to the page.
+                $('#usersCount').text(count);
+            };
+
+            $.connection.hub.start();
+        });
+    </script>
+
 </div>
