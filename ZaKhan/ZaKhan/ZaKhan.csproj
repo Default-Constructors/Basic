@@ -419,9 +419,7 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
     <Content Include="Views\Category\Update.cshtml" />
-    <Content Include="Views\Booking\Bookings.cshtml" />
     <Content Include="Views\Booking\Calendar.cshtml" />
-    <Content Include="Views\Booking\Create.cshtml" />
     <Content Include="Views\Booking\Delete.cshtml" />
     <Content Include="Views\Booking\Edit.cshtml" />
     <Content Include="Views\Booking\GatewayCal.cshtml" />
@@ -434,14 +432,15 @@
     <Content Include="Views\Optometrist\Details.cshtml" />
     <Content Include="Views\Optometrist\Edit.cshtml" />
     <Content Include="Views\Optometrist\Index.cshtml" />
+    <Content Include="Views\Booking\Bookings.cshtml" />
+    <Content Include="Views\Booking\Confirm.cshtml" />
+    <Content Include="Views\Booking\Create.cshtml" />
     <Content Include="Views\Audit\AuditRecords.cshtml" />
     <Content Include="Views\Fee\Create.cshtml" />
     <Content Include="Views\Fee\Delete.cshtml" />
     <Content Include="Views\Fee\Details.cshtml" />
     <Content Include="Views\Fee\Edit.cshtml" />
     <Content Include="Views\Fee\Index.cshtml" />
-    <Content Include="Views\Booking\Cancel.cshtml" />
-    <Content Include="Views\Booking\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
